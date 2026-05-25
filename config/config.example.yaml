@@ -1,0 +1,33 @@
+openai:
+  model_primary: "YOUR_MODEL"
+  model_fast: "YOUR_FAST_MODEL"
+  temperature_primary: 0.2
+  temperature_fast: 0.1
+
+system:
+  max_iteraciones: 5
+  min_propiedades: 3
+  score_umbral: 0.60
+  debug: false
+
+scraping:
+  modo: "real"
+
+  fuentes:
+    - nombre: "Metrocuadrado"
+      habilitado: true
+
+    - nombre: "FincaRaiz"
+      habilitado: true
+
+  delay_entre_requests: 2
+  max_retries: 3
+  timeout: 20
+
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/123.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36"
+
+logging:
+  level: "INFO"

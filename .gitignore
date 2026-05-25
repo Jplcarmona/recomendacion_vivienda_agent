@@ -1,0 +1,49 @@
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Data
+cache/
+exports/
+*.csv
+*.xlsx
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Selenium
+chromedriver.exe
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+build/
+dist/
+*.egg-info/
+config/config.yaml
