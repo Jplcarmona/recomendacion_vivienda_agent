@@ -71,13 +71,15 @@ def nodo_evaluador(state: SystemState) -> SystemState:
         print(f"[{barras}] {score:.2f} | {prop.get('titulo', 'Sin título')[:60]}")
 
     # UMBRALES MÁS FLEXIBLES
-    umbral = umbral = CONFIG.get("system", {}).get("score_umbral", 0.45)
+    umbral = CONFIG.get("system", {}).get("score_umbral", 0.45)
     aceptables = [p for p in propiedades_evaluadas if p["score"] >= umbral]
 
+    min_propiedades = CONFIG.get("system", {}).get("min_propiedades", 3)
+    
     # DECISIÓN FLEXIBLE
-    if len(aceptables) >= 1:
+    if len(aceptables) >= min_propiedades:
         decision = "aceptable"
-    elif len(propiedades_evaluadas) >= 3:
+    elif len(propiedades_evaluadas) >= min_propiedades:
         decision = "aceptable"
         aceptables = propiedades_evaluadas[:3]
     else:
