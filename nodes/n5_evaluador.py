@@ -2,6 +2,10 @@ import json
 from state import SystemState
 from tools.scoring import calcular_score
 from tools.openai_client import OpenAIClient
+import yaml
+
+with open("config/config.yaml", "r", encoding="utf-8") as f:
+    CONFIG = yaml.safe_load(f)
 
 def nodo_evaluador(state: SystemState) -> SystemState:
 
@@ -67,7 +71,7 @@ def nodo_evaluador(state: SystemState) -> SystemState:
         print(f"[{barras}] {score:.2f} | {prop.get('titulo', 'Sin título')[:60]}")
 
     # UMBRALES MÁS FLEXIBLES
-    umbral = 0.45
+    umbral = umbral = CONFIG.get("system", {}).get("score_umbral", 0.45)
     aceptables = [p for p in propiedades_evaluadas if p["score"] >= umbral]
 
     # DECISIÓN FLEXIBLE
