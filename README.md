@@ -27,31 +27,37 @@
 ## ✨ Características
 
 ### 🤖 Inteligencia Contextual
+
 - Extracción automática de criterios en lenguaje natural
 - Análisis de zonas con noticias reales (Google News RSS, NewsAPI)
 - Integración de información contextual (seguridad, valorización, movilidad)
 
 ### 🔍 Búsqueda Multi-Fuente
+
 - Scraping de múltiples portales inmobiliarios (Metrocuadrado, FincaRaiz)
 - Eliminación automática de duplicados
 - Modo simulado para testing
 
 ### 📊 Evaluación Inteligente
+
 - Scoring ponderado con 6 criterios (precio, área, cuartos, baños, parqueadero, URL)
 - Bonus/penalización según compatibilidad de zona
 - Generación de explicaciones narrativas con LLM
 
 ### 🔄 Relajación Progresiva
+
 - Adaptación inteligente de criterios cuando no hay resultados
 - 3 niveles de relajación (leve, moderado, agresivo)
 - Trazabilidad completa de cambios
 
 ### ✅ Validación Rigurosa
+
 - Dos niveles de validación (Evaluador + Validador)
 - Reglas específicas del mercado colombiano
 - Verificación de coherencia y calidad
 
 ### 📈 Trazabilidad Completa
+
 - Historial de todas las decisiones
 - Criterios originales preservados para auditoría
 - Modificaciones documentadas con razones
@@ -82,15 +88,15 @@ INPUT: "Busco apto en El Poblado, máximo 400M, 2 cuartos"
 
 ### 7 Nodos Especializados
 
-| # | Nodo | Responsabilidad |
-|---|------|-----------------|
-| 1 | **Asistente Requisitos** | Extrae criterios del texto libre |
-| 2 | **Coordinador** | Define zonas de búsqueda priorizadas |
-| 3 | **Agente Noticias** | Analiza zonas con noticias reales |
-| 4 | **Scraping** | Busca propiedades en portales |
-| 5 | **Evaluador** | Califica propiedades con scoring |
-| 6 | **Relajación** | Modifica criterios si no hay resultados |
-| 7 | **Validador** | Validación final de coherencia |
+| # | Nodo                           | Responsabilidad                         |
+| - | ------------------------------ | --------------------------------------- |
+| 1 | **Asistente Requisitos** | Extrae criterios del texto libre        |
+| 2 | **Coordinador**          | Define zonas de búsqueda priorizadas   |
+| 3 | **Agente Noticias**      | Analiza zonas con noticias reales       |
+| 4 | **Scraping**             | Busca propiedades en portales           |
+| 5 | **Evaluador**            | Califica propiedades con scoring        |
+| 6 | **Relajación**          | Modifica criterios si no hay resultados |
+| 7 | **Validador**            | Validación final de coherencia         |
 
 ### Stack Tecnológico
 
@@ -114,12 +120,14 @@ INPUT: "Busco apto en El Poblado, máximo 400M, 2 cuartos"
 ### Pasos de Instalación
 
 1. **Clonar el repositorio**
+
 ```bash
 git clone https://github.com/tu-usuario/recomendacion_vivienda.git
 cd recomendacion_vivienda
 ```
 
 2. **Crear entorno virtual**
+
 ```bash
 python -m venv venv
 
@@ -131,11 +139,13 @@ source venv/bin/activate
 ```
 
 3. **Instalar dependencias**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Configurar variables de entorno**
+
 ```bash
 cp .env.example .env
 # Editar .env con tus claves API
@@ -219,6 +229,7 @@ python main.py
 ```
 
 El sistema mostrará:
+
 - Resumen del proceso
 - Top 5 propiedades recomendadas con scores
 - Explicación narrativa del asesor
@@ -295,34 +306,35 @@ recomendacion_vivienda/
 ### Documentos Principales
 
 1. **ARQUITECTURA_SISTEMA.md** (41 KB)
+
    - Descripción completa de la arquitectura
    - Definición del estado
    - Descripción de los 7 nodos
    - Estrategia de relajación
    - Ejemplo de ejecución
    - Reflexión crítica
-
 2. **DIAGRAMA_DETALLADO.md** (29 KB)
+
    - Arquitectura en capas visual
    - Flujo de datos detallado
    - Máquina de estados
    - Matriz de decisión
    - Ciclo de vida
    - Dependencias entre nodos
-
 3. **RESUMEN_EJECUTIVO.md** (10 KB)
+
    - Visión general en una página
    - Componentes clave
    - Flujo de ejecución
    - Fortalezas y limitaciones
    - Métricas de éxito
-
 4. **DIFERENCIAS_N5_VS_N7.md** (15 KB)
+
    - Comparación detallada entre Evaluador y Validador
    - Casos de uso
    - Ejemplos prácticos
-
 5. **VERIFICACION_ARQUITECTURA.md** (16 KB)
+
    - Checklist de arquitectura
    - Verificación de requisitos
    - Matriz de cumplimiento (96/100)
@@ -341,6 +353,7 @@ resultado = ejecutar_sistema(input_usuario)
 ```
 
 **Salida esperada**:
+
 ```
 ╔════════════════════════════════════════════════════════════════╗
 ║  SISTEMA DE RECOMENDACIÓN DE VIVIENDA — RESULTADO FINAL       ║
@@ -416,6 +429,7 @@ resultado = ejecutar_sistema(input_usuario, debug=True)
 ```
 
 Mostrará:
+
 - Logs detallados de cada nodo
 - Estado completo del sistema
 - Decisiones de enrutamiento
@@ -441,79 +455,42 @@ class NuevoScraper(BaseScraper):
 
 ## 📊 Métricas de Éxito
 
-| Métrica | Objetivo | Actual |
-|---------|----------|--------|
-| Tiempo de búsqueda | < 2 minutos | ~1.5 min |
-| Propiedades encontradas | ≥ 5 | 5-15 |
-| Score promedio | ≥ 0.75 | 0.78 |
-| Tasa de aceptación | ≥ 80% | ~85% |
-| Iteraciones promedio | ≤ 2 | 1.2 |
-| Disponibilidad de APIs | ≥ 95% | ~98% |
+| Métrica                | Objetivo    | Actual   |
+| ----------------------- | ----------- | -------- |
+| Tiempo de búsqueda     | < 2 minutos | ~1.5 min |
+| Propiedades encontradas | ≥ 5        | 5-15     |
+| Score promedio          | ≥ 0.75     | 0.78     |
+| Tasa de aceptación     | ≥ 80%      | ~85%     |
+| Iteraciones promedio    | ≤ 2        | 1.2      |
+| Disponibilidad de APIs  | ≥ 95%      | ~98%     |
 
 ---
 
 ## 🐛 Troubleshooting
 
 ### Error: "OPENAI_API_KEY not found"
+
 ```bash
 # Verificar que .env existe y tiene la clave
 cat .env | grep OPENAI_API_KEY
 ```
 
 ### Error: "No se encontraron propiedades"
+
 - Verificar que el modo de scraping está configurado correctamente
 - Intentar con criterios menos restrictivos
 - Verificar conexión a internet
 
 ### Error: "NewsAPI rate limit exceeded"
+
 - Esperar 24 horas o usar plan de pago
 - Usar fallback a Google News RSS (automático)
 
 ### Scrapers no funcionan
+
 - Verificar que Selenium está instalado: `pip install selenium`
 - Verificar que Chrome/Chromium está instalado
 - Usar modo simulado para testing: `modo: "simulado"`
-
----
-
-## 🚀 Próximos Pasos
-
-### Corto Plazo (1-2 semanas)
-- [ ] Implementar caché de noticias
-- [ ] Agregar logging mejorado
-- [ ] Crear tests automatizados
-- [ ] Validar scrapers con cambios en portales
-
-### Mediano Plazo (1-2 meses)
-- [ ] Machine Learning para scoring
-- [ ] Integrar APIs oficiales de portales
-- [ ] Análisis de tendencias de precios
-- [ ] Dashboard de monitoreo
-
-### Largo Plazo (3-6 meses)
-- [ ] Modelo de predicción de precios
-- [ ] Análisis de riesgo de inversión
-- [ ] Integración con WhatsApp
-- [ ] Análisis detallado de vecindario
-
----
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-### Guías de Contribución
-
-- Seguir el estilo de código existente
-- Agregar tests para nuevas funcionalidades
-- Actualizar documentación
-- Usar commits descriptivos
 
 ---
 
@@ -525,41 +502,4 @@ Este proyecto está bajo la Licencia MIT. Ver archivo `LICENSE` para más detall
 
 ## 👨‍💻 Autor
 
-**Juan** - Desarrollador del Sistema de Recomendación de Vivienda
-
----
-
-## 📞 Soporte
-
-Para preguntas o problemas:
-
-1. Revisar la documentación en `ARQUITECTURA_SISTEMA.md`
-2. Consultar ejemplos en la sección [Ejemplos](#ejemplos)
-3. Abrir un issue en GitHub
-4. Contactar al autor
-
----
-
-## 🙏 Agradecimientos
-
-- [LangGraph](https://langchain-ai.github.io/langgraph/) por la orquestación
-- [OpenAI](https://openai.com/) por GPT-4o
-- [NewsAPI](https://newsapi.org/) por las noticias
-- Comunidad de Python y LangChain
-
----
-
-## 📈 Estadísticas del Proyecto
-
-- **Líneas de código**: ~2,000+
-- **Documentación**: 100+ páginas
-- **Nodos**: 7 especializados
-- **Herramientas**: 10+
-- **Cumplimiento de requisitos**: 99.6%
-- **Cobertura de tests**: En desarrollo
-
----
-
-**Última actualización**: Mayo 24, 2026
-**Versión**: 1.0
-**Estado**: ✅ Producción
+**Juan Pablo Lopez Carmona** - Ingeniero en Ciencia de Datos
